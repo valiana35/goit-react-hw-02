@@ -1,15 +1,18 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
-const Options = () => {
-    const [ clicks, setClicks ] = useState(0);
-    const handleClick = () => {
-      setClicks(clicks + 1);
-    };
+const Options = (props) => {
+  // const [options, setOptions] = useState({ good: 0, neutral: 0, bad: 0 });
+  // const handleOptions = (prop, value) => {
+  //   setOptions({
+  //     ...options,
+  //     [prop]: value + 1
+  //   });
+  // };
     return (
         <>
-          <button type='button' value={clicks} onClick = {handleClick}>Good</button>
-          <button type='button' value={clicks} onClick = {handleClick}>Neutral</button>
-          <button type='button' value={clicks} onClick = {handleClick}>Bad</button>
+          <button  onClick = {props.handleOptions}>Good</button>
+          <button  onClick = {props.handleOptions}>Neutral</button>
+          <button  onClick = {props.handleOptions}>Bad</button>
         </>
     )
 }
