@@ -19,7 +19,7 @@ const App = () => {
   });
 
   useEffect(() => {
-    window.localStorage.setItem('result', JSON.stringify(options));
+    window.localStorage.setItem('results', JSON.stringify(options));
   }, [options]);
 
   const updateFeedback = feedbackType => {
