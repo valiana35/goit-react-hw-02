@@ -1,20 +1,14 @@
-// import { useState } from 'react';
+import css from './Options.module.css';
 
-const Options = (props) => {
-  // const [options, setOptions] = useState({ good: 0, neutral: 0, bad: 0 });
-  // const handleOptions = (prop, value) => {
-  //   setOptions({
-  //     ...options,
-  //     [prop]: value + 1
-  //   });
-  // };
+const Options = ({ updateFeedback,totalFeedback, resetFeedback }) => {
     return (
-        <>
-          <button  onClick = {props.handleOptions}>Good</button>
-          <button  onClick = {props.handleOptions}>Neutral</button>
-          <button  onClick = {props.handleOptions}>Bad</button>
-        </>
-    )
+        <div className={css.optionsBtn}>
+          <button className={css.optionbtn}  onClick={() => updateFeedback('good')}>Good</button>
+          <button className={css.optionbtn}  onClick={() => updateFeedback('neutral')}>Neutral</button>
+          <button className={css.optionbtn}  onClick={() => updateFeedback('bad')}>Bad</button>
+          {totalFeedback > 0 && (<button className={css.optionbtn} onClick={() => resetFeedback()}>Reset</button>)}
+        </div>
+    );
 }
 
 export default Options;
